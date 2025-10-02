@@ -1,0 +1,30 @@
+:root {
+    --primary-color: #008000;
+    --secondary-color: #FFFFFF;
+}
+
+.navbar {
+    background-color: var(--primary-color) !important;
+}
+
+.navbar-brand {
+    color: var(--secondary-color) !important;
+}
+
+.nav-link {
+    color: var(--secondary-color) !important;
+}
+
+.card {
+    margin-bottom: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #006400;
+    border-color: #006400;
+}
