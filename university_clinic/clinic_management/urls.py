@@ -8,7 +8,8 @@ def redirect_to_login(request):
     return redirect('login')
 
 urlpatterns = [
-    path('', redirect_to_login, name='home'),  # Add this line for root URL
+    path('', redirect_to_login, name='home'),
     path('admin/', admin.site.urls),
-    path('', include('accounts.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('patients/', include('patients.urls')),  # Add this line
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
