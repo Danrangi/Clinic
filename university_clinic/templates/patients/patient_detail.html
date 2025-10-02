@@ -1,0 +1,187 @@
+{% extends 'base.html' %}
+
+{% block title %}Patient Details{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center">
+                <h3 class="mb-0">Patient Details</h3>
+                <a href="{% url 'patient_edit' patient.pk %}" class="btn btn-warning">Edit Patient</a>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Personal Information</h4>
+                    <table class="table">
+                        <tr>
+                            <th>Patient ID:</th>
+                            <td>{{ patient.patient_id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Name:</th>
+                            <td>{{ patient.first_name }} {{ patient.last_name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Date of Birth:</th>
+                            <td>{{ patient.date_of_birth }}</td>
+                        </tr>
+                        <tr>
+                            <th>Gender:</th>
+                            <td>{{ patient.get_gender_display }}</td>
+                        </tr>
+                        <tr>
+                            <th>Blood Group:</th>
+                            <td>{{ patient.blood_group }}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <h4>Contact Information</h4>
+                    <table class="table">
+                        <tr>
+                            <th>Phone:</th>
+                            <td>{{ patient.phone_number }}</td>
+                        </tr>
+                        <tr>
+                            <th>Email:</th>
+                            <td>{{ patient.email|default:"Not provided" }}</td>
+                        </tr>
+                        <tr>
+                            <th>Address:</th>
+                            <td>{{ patient.address }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12">
+                    <h4>Medical Information</h4>
+                    <table class="table">
+                        <tr>
+                            <th>Allergies:</th>
+                            <td>{{ patient.allergies|default:"None" }}</td>
+                        </tr>
+                        <tr>
+                            <th>Medical Conditions:</th>
+                            <td>{{ patient.medical_conditions|default:"None" }}</td>
+                        </tr>
+                        <tr>
+                            <th>Current Medications:</th>
+                            <td>{{ patient.current_medications|default:"None" }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12">
+                    <h4>System Information</h4>
+                    <table class="table">
+                        <tr>
+                            <th>Registration Date:</th>
+                            <td>{{ patient.registration_datecat > templates/patients/patient_detail.html << 'EOL'
+{% extends 'base.html' %}
+
+{% block title %}Patient Details{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center">
+                <h3 class="mb-0">Patient Details</h3>
+                <div>
+                    <a href="{% url 'patient_list' %}" class="btn btn-secondary">Back to List</a>
+                    <a href="{% url 'patient_edit' patient.pk %}" class="btn btn-warning">Edit Patient</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Personal Information</h4>
+                    <table class="table">
+                        <tr>
+                            <th>Patient ID:</th>
+                            <td>{{ patient.patient_id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Name:</th>
+                            <td>{{ patient.first_name }} {{ patient.last_name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Date of Birth:</th>
+                            <td>{{ patient.date_of_birth }}</td>
+                        </tr>
+                        <tr>
+                            <th>Gender:</th>
+                            <td>{{ patient.get_gender_display }}</td>
+                        </tr>
+                        <tr>
+                            <th>Blood Group:</th>
+                            <td>{{ patient.blood_group }}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <h4>Contact Information</h4>
+                    <table class="table">
+                        <tr>
+                            <th>Phone:</th>
+                            <td>{{ patient.phone_number }}</td>
+                        </tr>
+                        <tr>
+                            <th>Email:</th>
+                            <td>{{ patient.email|default:"Not provided" }}</td>
+                        </tr>
+                        <tr>
+                            <th>Address:</th>
+                            <td>{{ patient.address }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12">
+                    <h4>Medical Information</h4>
+                    <table class="table">
+                        <tr>
+                            <th>Allergies:</th>
+                            <td>{{ patient.allergies|default:"None" }}</td>
+                        </tr>
+                        <tr>
+                            <th>Medical Conditions:</th>
+                            <td>{{ patient.medical_conditions|default:"None" }}</td>
+                        </tr>
+                        <tr>
+                            <th>Current Medications:</th>
+                            <td>{{ patient.current_medications|default:"None" }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12">
+                    <h4>System Information</h4>
+                    <table class="table">
+                        <tr>
+                            <th>Registration Date:</th>
+                            <td>{{ patient.registration_date }}</td>
+                        </tr>
+                        <tr>
+                            <th>Last Updated:</th>
+                            <td>{{ patient.last_updated }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

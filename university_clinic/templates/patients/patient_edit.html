@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Patient - {{ patient.patient_id }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h3 class="mb-0">Edit Patient</h3>
+                        <div>
+                            <a href="{% url 'patient_detail' patient.pk %}" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="{{ form.first_name.id_for_label }}" class="form-label">First Name</label>
+                                {{ form.first_name }}
+                                {{ form.first_name.errors }}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="{{ form.last_name.id_for_label }}" class="form-label">Last Name</label>
+                                {{ form.last_name }}
+                                {{ form.last_name.errors }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="{{ form.date_of_birth.id_for_label }}" class="form-label">Date of Birth</label>
+                                {{ form.date_of_birth }}
+                                {{ form.date_of_birth.errors }}
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="{{ form.gender.id_for_label }}" class="form-label">Gender</label>
+                                {{ form.gender }}
+                                {{ form.gender.errors }}
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="{{ form.blood_group.id_for_label }}" class="form-label">Blood Group</label>
+                                {{ form.blood_group }}
+                                {{ form.blood_group.errors }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="{{ form.phone_number.id_for_label }}" class="form-label">Phone Number</label>
+                                {{ form.phone_number }}
+                                {{ form.phone_number.errors }}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="{{ form.email.id_for_label }}" class="form-label">Email</label>
+                                {{ form.email }}
+                                {{ form.email.errors }}
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.address.id_for_label }}" class="form-label">Address</label>
+                            {{ form.address }}
+                            {{ form.address.errors }}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.allergies.id_for_label }}" class="form-label">Allergies</label>
+                            {{ form.allergies }}
+                            {{ form.allergies.errors }}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.medical_conditions.id_for_label }}" class="form-label">Medical Conditions</label>
+                            {{ form.medical_conditions }}
+                            {{ form.medical_conditions.errors }}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.current_medications.id_for_label }}" class="form-label">Current Medications</label>
+                            {{ form.current_medications }}
+                            {{ form.current_medications.errors }}
+                        </div>
+
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
