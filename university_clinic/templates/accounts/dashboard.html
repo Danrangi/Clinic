@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - University Clinic Management{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Welcome, {{ user.get_full_name }}</h2>
+    <div class="row mt-4">
+        {% if user.role == 'front_desk' %}
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Patient Registration</h5>
+                        <p class="card-text">Register new patients and manage existing records.</p>
+                        <a href="#" class="btn btn-primary">Register Patient</a>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if user.role == 'doctor' %}
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Consultations</h5>
+                        <p class="card-text">Manage patient consultations and prescriptions.</p>
+                        <a href="#" class="btn btn-primary">View Patients</a>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if user.role == 'pharmacist' %}
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Pharmacy</h5>
+                        <p class="card-text">Manage prescriptions and inventory.</p>
+                        <a href="#" class="btn btn-primary">View Prescriptions</a>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
